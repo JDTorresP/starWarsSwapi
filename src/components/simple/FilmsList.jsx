@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../../styles/basic/filmsList.css';
 import Film from './Film.jsx';
 import axios from 'axios';
-
 export default class FilmsList extends Component {
     constructor(props) {
         super(props);

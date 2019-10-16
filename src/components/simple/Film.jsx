@@ -18,6 +18,10 @@ export default class Film extends Component {
         })
         return re;
     }
+    getIdCharacter(el){
+        return 1
+    }
+
     render() {
         let imgSrc=this.findsrcImage(this.props.title);
         let src =""
@@ -25,7 +29,15 @@ export default class Film extends Component {
         if(typeof imgSrc !== "undefined" && imgSrc.length>0){
             src =imgSrc[0].src;
         }
-       
+        let charAvatars=this.props.characters.map(function(el,i){
+            return <li key={i}>
+                     <Link  to={`/characters/${this.getIdCharacter(el)}`} >
+                        <img src = {'https://res.cloudinary.com/caavat/image/upload/v1571189010/rappi/icons/icons-'+Math.floor(Math.random() * 15)+'.png'} alt="character_image"/>
+                     </Link>
+                    </li>
+           
+        },this);
+
         return (
             <div className="card">
                 <div className="poster">
@@ -49,8 +61,7 @@ export default class Film extends Component {
                 <div className="star">
                     <h4>Cast</h4>
                     <ul>
-                        <li><img src = "https://www.famousbirthdays.com/headshots/robert-downey-jr-2.jpg" alt="character_image"/></li>
-                       
+                        {charAvatars}
                     </ul>
                 </div>
                 </div>

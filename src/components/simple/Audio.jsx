@@ -5,7 +5,7 @@ export default class Audio extends Component {
     constructor(props) {
         super(props);
         this.state = {
-           mute:true,
+           mute:false,
            srcMusic:"https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.mp3"
         };
       }

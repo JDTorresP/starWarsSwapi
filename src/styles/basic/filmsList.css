@@ -7,12 +7,19 @@
     justify-content: center;
     vertical-align: center;
     margin-left: 8%;
-    grid-gap: 5em;
+    grid-gap: 6em;
     grid-template-columns: repeat(auto-fill,16em);
+}
+@media screen and (max-width: 750px){
+    .container_films{
+        margin-top: 15%;
+        grid-gap: 3.5em;
+    }
 }
 @media screen and (max-width: 500px){
     .container_films{
         margin-top: 15%;
+        grid-gap: 3.5em;
         
     }
 }

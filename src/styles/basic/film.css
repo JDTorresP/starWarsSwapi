@@ -7,7 +7,7 @@ border: 1px solid rgb(219, 210, 82);
   background: #000;
   box-shadow: 0 5px 10px rgba(0,0,0, 0.5);
   width: 300px;
-  height: 450px;
+  height: 500px;
 }
 
 .card .poster {
@@ -126,16 +126,20 @@ border: 1px solid rgb(219, 210, 82);
 }
 
 .star ul {
+  height: 110px;
+  overflow: scroll;
   margin: 10px 0 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
+  
 }
 
 .star ul li {
   list-style: none;
   width: 45px;
   height: 45px;
-  background: #fff;
+  background: rgb(255, 255, 255);
   border-radius: 50%;
   overflow: hidden;
   margin-right: 6px;
