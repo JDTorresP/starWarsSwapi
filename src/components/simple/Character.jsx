@@ -19,15 +19,19 @@ export default class Character extends Component {
         let URL = this.props.src;
         if (typeof this.props.match !== "undefined"){
             URL = "https://swapi.co/api/people/"+this.props.match.params.id;  
-            this.setState({class_card:"card3"});   
+            this.setState({class_card:"card3"});  
+            axios.get(URL)
+            .then(response => {
+                this.setState({data:response.data});
+            })
+            .catch((error) => {
+                console.log('error ' + error);
+            }); 
+        }else{
+            this.setState({data:URL});
         }
-        axios.get(URL)
-        .then(response => {
-            this.setState({data:response.data});
-        })
-        .catch((error) => {
-            console.log('error ' + error);
-        });
+       
+       
     }
    getNamesMovie(el){
     axios.get(el)
