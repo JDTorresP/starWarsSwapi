@@ -72,6 +72,9 @@ export default class FilmsList extends Component {
             },this);
         }
         const { open } = this.state;
+        let p =this.state.para.split(".").map((el,i)=>{
+            return <p key={i}> {i===3?el+"...":el}</p>
+        })
         return (
             <div>
                 {open? <div className="modal_text">
@@ -83,7 +86,7 @@ export default class FilmsList extends Component {
                                     <p>Episode {this.romanize(parseInt(this.state.episode))}</p>
                                     <h1>{this.state.title}</h1>
                                 </div>
-                                <p>{this.state.para}</p>      
+                                {p}     
                                 </div>
                             </section>
                         </div>:
