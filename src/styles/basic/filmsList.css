@@ -33,8 +33,7 @@
 }
 
 .star-wars {
-
-  background-color:black; 
+  background-color:rgba(0, 0, 0, 0.651); 
     display: flex;
     justify-content: center;
     position: relative;
@@ -77,23 +76,49 @@
     }
   }
 
-  /* Modal Content */
-.modal-content {
-  position: absolute;
-  background-color: black;
-  margin: auto;
-  padding: 0;
-  width: 90%;
-  box-shadow: 0 10px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  animation-name: animatetop;
-  animation-duration: 0.4s
-}
+  .modal_text{
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 90%;
+    height: 100%;
+  }
 
-/* Add Animation */
-@keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
-}
-.close{
-  display: none;
-}
+  .close {
+    position: relative;
+    display: inline-block;
+    margin-left: 75%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+  }
+  .close:hover::before, .close:hover::after {
+    background: #ffffff;
+  }
+  .close::before, .close::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: rgb(240, 56, 56);
+  }
+  .close::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .close::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .close.heavy::before, .close.heavy::after {
+    height: 12px;
+    margin-top: -6px;
+  }

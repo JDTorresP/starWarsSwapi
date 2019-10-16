@@ -9,14 +9,22 @@ export default class FilmsList extends Component {
             data:[],
             open: false,
             isOpen: false,
+            episode :"Episode IV",
+            title: "A new Hope",
+            para:"lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsum"
+
+
         };
         this.bindApiData= this.bindApiData.bind(this);
       }
 
-      onOpenModal = () => {
-        this.setState({ open: true });
+      onOpenModal = ( epi, tit, parag) => {
+        this.setState({ open: true, episode:epi,title:tit,para:parag});
+        setTimeout(()=>{
+            this.onCloseModal();
+        },50000)
         };
-    
+        
         onCloseModal = () => {
         this.setState({ open: false });
         };
@@ -34,6 +42,16 @@ export default class FilmsList extends Component {
             console.log('error ' + error);
         });
     }
+    romanize(num) {
+        var lookup = {M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1},roman = '',i;
+        for ( i in lookup ) {
+          while ( num >= lookup[i] ) {
+            roman += i;
+            num -= lookup[i];
+          }
+        }
+        return roman;
+      }
     render() {
         let films =(<div> No movies yet :( , Please check your internet connection !</div>);
         if(typeof this.state.data !== "undefined" && this.state.data.length>0){
@@ -55,10 +73,26 @@ export default class FilmsList extends Component {
         }
         const { open } = this.state;
         return (
-            <div className="container_films">
-                {films}
-               
+            <div>
+                {open? <div className="modal_text">
+                        <span class="close heavy" onClick={()=>{this.onCloseModal()}}></span>
+                        <div></div>
+                            <section class="star-wars">
+                                <div class="crawl">
+                                <div class="title">
+                                    <p>Episode {this.romanize(parseInt(this.state.episode))}</p>
+                                    <h1>{this.state.title}</h1>
+                                </div>
+                                <p>{this.state.para}</p>      
+                                </div>
+                            </section>
+                        </div>:
+                    <div className="container_films">
+                        {films}
+                    </div>
+                }
             </div>
+            
            
         )
     }
