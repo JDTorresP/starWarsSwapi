@@ -18,8 +18,8 @@ export default class Header extends Component {
         let menu_nav=(
                 <ul className="cnt_lista">
                     <Link to="/"><img className="logo_nav"  src='https://res.cloudinary.com/caavat/image/upload/v1571180101/rappi/Logo_st-01.png' alt="Logo" /></Link>
-                    <Link to="/" style={{ textDecoration: 'none' }}><li onClick={this.props.scrollToProducts}>Peliculas</li></Link>
-                    <Link to="/characters" style={{ textDecoration: 'none' }}><li>Personajes</li></Link>
+                    <Link to="/" style={{ textDecoration: 'none' }}><li onClick={this.props.scrollToProducts}>Movies</li></Link>
+                    <Link to="/characters" style={{ textDecoration: 'none' }}><li>Characters</li></Link>
                     <Audio/>
                 </ul>);
         
