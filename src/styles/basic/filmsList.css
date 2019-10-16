@@ -23,3 +23,77 @@
         
     }
 }
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  top: -25px;
+  z-index: 1;
+}
+
+.star-wars {
+
+  background-color:black; 
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 800px;
+    color: #feda4a;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 500%;
+    font-weight: 600;
+    letter-spacing: 6px;
+    line-height: 150%;
+    perspective: 400px;
+    text-align: justify;
+  }
+  
+  .crawl {
+    position: relative;
+    top: 9999px;
+    transform-origin: 50% 100%;
+    animation: crawl 60s linear;
+  }
+  
+  .crawl > .title {
+    font-size: 90%;
+    text-align: center;
+  }
+  
+  .crawl > .title h1 {
+    margin: 0 0 100px;
+    text-transform: uppercase;
+  }
+  
+  @keyframes crawl {
+    0% {
+      top: 0;
+      transform: rotateX(20deg)  translateZ(0);
+    }
+    100% { 
+      top: -6000px;
+      transform: rotateX(25deg) translateZ(-2500px);
+    }
+  }
+
+  /* Modal Content */
+.modal-content {
+  position: absolute;
+  background-color: black;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  box-shadow: 0 10px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+.close{
+  display: none;
+}

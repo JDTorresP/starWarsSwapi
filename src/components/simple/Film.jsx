@@ -44,7 +44,7 @@ export default class Film extends Component {
                     <img src = {src} alt="movieposter"/>
                 </div>
                 <div className="details">
-                <h2>{this.props.title}<br/><span>Director: {this.props.director}</span><br/><span>Producer: {this.props.producer}</span></h2>
+                <h2 onClick={this.props.click}>{this.props.title}<br/><span>Director: {this.props.director}</span><br/><span>Producer: {this.props.producer}</span></h2>
 
                 <div className="rating">
                     <span>Chapter: {this.props.episode}</span>
@@ -56,10 +56,11 @@ export default class Film extends Component {
 
                 <div className="info">
                     <p>{this.props.opening_crawl}</p>
-                </div>
-
+                </div> 
                 <div className="star">
+                    <Link  to={`/film/${this.props.id+1}/people`} >
                     <h4>Cast</h4>
+                    </Link>
                     <ul>
                         {charAvatars}
                     </ul>

@@ -6,11 +6,20 @@ export default class FilmsList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data:[]
+            data:[],
+            open: false,
+            isOpen: false,
         };
         this.bindApiData= this.bindApiData.bind(this);
       }
 
+      onOpenModal = () => {
+        this.setState({ open: true });
+        };
+    
+        onCloseModal = () => {
+        this.setState({ open: false });
+        };
     componentDidMount(){
         this.bindApiData();
      }
@@ -31,6 +40,7 @@ export default class FilmsList extends Component {
             films =this.state.data.map(function(el,i){
                 return <Film
                 key ={i}
+                id ={i}
                 title={el.title}
                 episode={el.episode_id}
                 opening_crawl={el.opening_crawl}
@@ -39,12 +49,15 @@ export default class FilmsList extends Component {
                 release_date={el.release_date}
                 characters={el.characters}
                 src={this.findsrcImage}
+                click ={this.onOpenModal}
                 />
             },this);
         }
+        const { open } = this.state;
         return (
             <div className="container_films">
                 {films}
+               
             </div>
            
         )

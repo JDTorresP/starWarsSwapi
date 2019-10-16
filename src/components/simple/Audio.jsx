@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import '../../styles/basic/audio.css';
-
+import Modal from 'react-responsive-modal';
 export default class Audio extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            open: false,
+            isOpen: false,
            mute:false,
            srcMusic:"https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.mp3"
         };
       }
+    
     switchQuietPls(){
         this.setState({mute:!this.state.mute},this.checkAudio());
     }
