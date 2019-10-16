@@ -1,0 +1,18 @@
+.container_films{
+    width: 80%;
+    margin-top: 10%;
+    display: grid;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    vertical-align: center;
+    margin-left: 8%;
+    grid-gap: 5em;
+    grid-template-columns: repeat(auto-fill,16em);
+}
+@media screen and (max-width: 500px){
+    .container_films{
+        margin-top: 15%;
+        
+    }
+}

@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'STARWARS';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/STARWARS.eot'); /* IE9 Compat Modes */
+  src: local('STARWARS'), local('STARWARS'),
+       url('./fonts/STARWARS.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/STARWARS.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/STARWARS.svg') format('svg'); /* Legacy iOS */
+}
+body {
+  font-family: 'STARWARS';
+  color:white;
+  background-color: black;
+}
